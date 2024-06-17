@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static "blog.css" %}" />
+</head>
+<body>
+    <div class="container">
+        <span><a href="/" title="главная страница сайта" class="btn">Главная</a></span>
+        <span><a href="/about" class="btn">Обо мне</a></span>
+    </div>
+{% block content %}
+{% endblock %}
+</body>
+</html>
