@@ -1,5 +1,20 @@
-{% extends 'blog/index.html' %}
-{% block title %}Список статей{% endblock %}
+{% extends "blog/index.html" %}
+
+{% block title %}Посты{% endblock %}
+
 {% block content %}
-    <div class="container">Здесь будут данные из БД</div>
+    <div class="container">
+        <h1>Посты</h1>
+        {% for post in posts %}
+            <h2>
+                {{ post.title }}
+            </h2>
+            <p>
+                Опубликовано: {{ post.publish }}<br>
+                Автор: {{ post.user }}
+            </p>
+            {{ post.body }}
+        {% endfor %}
+        {% include "pagination.html" with page=page_obj %}
+    </div>
 {% endblock %}
